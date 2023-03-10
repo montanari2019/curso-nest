@@ -1,0 +1,23 @@
+Curos de nest.JS
+
+Atribuições do controlador(app.controller.ts):
+
+Responsavel apenas com o protocolo http/https:
+
+1° Definir o path da URL
+2° Qual verdo htpp que ira executar a ação.
+3° Como buscar dentro das requisições as informações a serem manipuladas.
+
+Obs: toda a logica de manipulação sai do controlador e vai para o arquivo service(app.service.ts) e passa a ser apenas invocada dentro do controlador.
+
+
+Módulo (app.module.ts):
+
+Um modulo no nestJS é um agregador de classes correlacionadas, ou seja nele é possível que sejam informados todos os controlers e services da aplicação.
+Essa opção nos permite isolar a aplicação em domínios como por exemplo o domínio d eusuário onde todas as funções s~çao criadas e chamadas dentro desse dominio contendo 3 arquivos.
+
+user.module.ts
+user.controller.ts
+user.service.ts
+
+Restando assim apenas informar no moduleo principal da aplicação na pasta raiz(app.module.ts) o nosso modulo user.module.ts de dentro do domínio (pasta) de usuário.
