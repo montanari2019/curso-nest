@@ -16,7 +16,7 @@ export class UsuarioService{
     public searchUser(nameUser:string): UserDto {
         console.log("nome do usuário" , nameUser)
         
-        const userEncontrado = this.users.find(user => user.name === nameUser)
+        const userEncontrado = this.users.find(user => user.nickName === nameUser)
         return userEncontrado
 
         

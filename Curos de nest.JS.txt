@@ -21,3 +21,15 @@ user.controller.ts
 user.service.ts
 
 Restando assim apenas informar no moduleo principal da aplicação na pasta raiz(app.module.ts) o nosso modulo user.module.ts de dentro do domínio (pasta) de usuário.
+
+
+Basicamente para criar um decorator de validação customizado é necessário além de cria-lo informar os module do dominio que estamos trabalhando como por exemplo. declarar a classe constrain do validador no user.module.ts
+@Module({
+    controllers:[UserController],
+    providers:[UsuarioService, IsNickeNameisUniqueConstraint],
+
+})
+
+
+Após isso será necessario configurar o useContainer no arquivo main da aplicação conforme abaixo:
+useContainer(app.select(AppModule), { fallbackOnErrors: true})
